@@ -26,9 +26,7 @@ I'm not super familiar with the Deno project, so I've only worked on this enough
 
 There's also a HTTP server that accepts user code and evaluates it within the runtime.
 
-So to play around, you can run the server with `cargo run` and then send some code like `curl -X POST -d 'console.log(await request.get("https://healeycodes.com", {}));' localhost:3000`.
-
-`console.log` prints to the server's stdout.
+So to play around, you can run the server with `cargo run` and then send some code like `curl -X POST -d 'console.log(await request.get("https://healeycodes.com", {}));' localhost:3000`. `console.log` prints to the server's stdout.
 
 Errors are returned to the client e.g. `curl -X POST -d 'unknown;' localhost:3000` sends back `ReferenceError: unknown is not defined at at ...`
 
