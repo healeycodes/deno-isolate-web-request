@@ -1,4 +1,4 @@
-# making a web request from an isolate
+# making a web request from within an isolate
 
 [Roll your own JavaScript runtime](https://deno.com/blog/roll-your-own-javascript-runtime) shows you how to write a JavaScript runtime, based on the V8 JavaScript engine, using parts of Deno. The example code can read and write to files and has a simplified console API.
 
