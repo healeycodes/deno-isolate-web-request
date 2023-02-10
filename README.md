@@ -1,6 +1,8 @@
 # making a web request from an isolate
 
-Building on [Roll your own JavaScript runtime](https://deno.com/blog/roll-your-own-javascript-runtime), this repository has a mini JavaScript runtime that adds a global object `request` that lets you make GET/POST web requests from within the runtime.
+[Roll your own JavaScript runtime](https://deno.com/blog/roll-your-own-javascript-runtime) shows you how to write a JavaScript runtime, based on the V8 JavaScript engine, using parts of Deno. The example code can read and write to files and has a simplified console API.
+
+This repository builds on that runtime and adds a global object called `request` that lets you make GET/POST web requests from within the runtime.
 
 The bindings for `request` are set up in `runtime/src/main.rs` and `runtime/src/minijs.js`.
 
@@ -22,7 +24,7 @@ I'm not super familiar with the Deno project, so I've only worked on this enough
 
 ## HTTP Server
 
-There's also a development HTTP server that accepts user code and evaluates it within an Isolate (an encapsulated a V8 engine instance).
+There's also a HTTP server that accepts user code and evaluates it within the runtime.
 
 So to play around, you can run the server with `cargo run` and then send some code like `curl -X POST -d 'console.log(await request.get("https://healeycodes.com", {}));' localhost:3000`.
 
